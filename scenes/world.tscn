@@ -21,6 +21,21 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_71j4m")
 
+[sub_resource type="Animation" id="Animation_k0juu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1263, -128)]
+}
+
 [sub_resource type="Animation" id="Animation_4wyf3"]
 resource_name = "move"
 length = 2.0
@@ -36,21 +51,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1263, 189), Vector2(1886, 189)]
-}
-
-[sub_resource type="Animation" id="Animation_k0juu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1263, -128)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_71j4m"]
