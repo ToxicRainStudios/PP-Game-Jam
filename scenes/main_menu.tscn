@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1kx3w8o1etvp"]
+[gd_scene load_steps=6 format=3 uid="uid://b1kx3w8o1etvp"]
 
 [ext_resource type="Script" uid="uid://dfhckiq6tggqf" path="res://assets/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://dsei5kecx8hyx" path="res://assets/main_menu_ground.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://c8tck1tx5bb1s" path="res://assets/logo.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://do7i6wkasnhu4" path="res://assets/main_menu_background.png" id="2_wu84c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
 font_color = Color(0, 0, 0, 1)
@@ -16,6 +17,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 657.0
+texture = ExtResource("2_wu84c")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
