@@ -1,14 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqlt8o01v1lwo"]
 
-<<<<<<< Updated upstream
-[ext_resource type="Script" path="res://scripts/pickup.gd" id="1_7cqbe"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pg2rt"]
-load_path = "res://.godot/imported/battery.png-0291d92f3cb8a965d4b9647e0eab9582.ctex"
-=======
 [ext_resource type="Script" uid="uid://damxga6wlheod" path="res://scripts/pickup.gd" id="1_7cqbe"]
 [ext_resource type="Texture2D" uid="uid://cm3ar6omx3o1" path="res://assets/battery.png" id="1_pg2rt"]
->>>>>>> Stashed changes
 
 [sub_resource type="Animation" id="Animation_7cqbe"]
 length = 0.001
@@ -59,7 +52,7 @@ script = ExtResource("1_7cqbe")
 visibility_layer = 5
 position = Vector2(0, -10)
 scale = Vector2(5, 5)
-texture = SubResource("CompressedTexture2D_pg2rt")
+texture = ExtResource("1_pg2rt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
