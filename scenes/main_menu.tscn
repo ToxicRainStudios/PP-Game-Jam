@@ -1,8 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1kx3w8o1etvp"]
 
 [ext_resource type="Script" uid="uid://dfhckiq6tggqf" path="res://main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://dsei5kecx8hyx" path="res://main_menu_ground.png" id="2_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://c8tck1tx5bb1s" path="res://logo.png" id="2_ekxnf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
 font_color = Color(0, 0, 0, 1)
@@ -17,22 +15,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-texture_filter = 1
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_top = -28.0
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("2_bqqt6")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = 74.0
-offset_top = 16.0
-offset_right = 573.0
-offset_bottom = 328.0
-texture = ExtResource("2_ekxnf")
+offset_left = 63.0
+offset_top = 61.0
+offset_right = 186.0
+offset_bottom = 84.0
+text = "Freaky game"
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
