@@ -18,6 +18,7 @@ platform_color = Color(0.613881, 0.46537, 0.349869, 1)
 
 [node name="Platform2" parent="." instance=ExtResource("2_rwgxs")]
 position = Vector2(485, 39)
+rotation = -0.395377
 script = ExtResource("3_4wyf3")
 platform_width = 500.0
 platform_height = 100.0

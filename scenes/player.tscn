@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://tt7cbv68o0sl" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://qtstc1rdhhtf" path="res://scripts/player.gd" id="1_g2els"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(128, 130)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 60.0913
+height = 126.076
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
@@ -14,7 +15,8 @@ jump_force = 500
 texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_g2els")
+rotation = -0.00223017
+shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-6, -123)
