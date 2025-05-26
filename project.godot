@@ -13,7 +13,7 @@ config_version=5
 config/name="PP-Game-Jam"
 run/main_scene="uid://b1kx3w8o1etvp"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [dotnet]
 
