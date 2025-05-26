@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b1kx3w8o1etvp"]
 
-[ext_resource type="Script" uid="uid://dfhckiq6tggqf" path="res://assets/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://dfhckiq6tggqf" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://dsei5kecx8hyx" path="res://assets/main_menu_ground.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://c8tck1tx5bb1s" path="res://assets/logo.png" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://do7i6wkasnhu4" path="res://assets/main_menu_background.png" id="2_wu84c"]
@@ -50,6 +50,7 @@ offset_bottom = 447.0
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Start"
+script = ExtResource("1_l6cm7")
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
