@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var animator : AnimationPlayer = $Sprite2D/AnimationPlayer
 
 
-@onready var sprite = $Sprite2D
+
 
 func _physics_process(delta):
 	if not is_on_floor():

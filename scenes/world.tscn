@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3go7ga4sd8a" path="res://assets/background1.png" id="4_i7141"]
 [ext_resource type="Texture2D" uid="uid://cynq4xfw6xxi0" path="res://assets/ground1.png" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="5_71j4m"]
-[ext_resource type="PackedScene" path="res://scenes/enemy1.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://b7hux2av5we5a" path="res://scenes/enemy1.tscn" id="6_qfnet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
 texture = ExtResource("4_k0juu")
