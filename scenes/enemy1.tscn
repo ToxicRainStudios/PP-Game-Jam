@@ -9,10 +9,6 @@ size = Vector2(640, 940)
 [node name="knight" type="CharacterBody2D"]
 script = ExtResource("1_n665k")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_nb0t0")
-
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, 3.8147e-07)
 scale = Vector2(0.1, 0.1)
@@ -24,6 +20,10 @@ position = Vector2(0, 3.8147e-07)
 scale = Vector2(0.1, 0.1)
 target_position = Vector2(-1000, 0)
 collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_nb0t0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, 4)

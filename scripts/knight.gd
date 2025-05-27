@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 const SPEED = 60
 
@@ -23,12 +23,8 @@ func _process(delta):
 		if Input.is_action_pressed("move_right"):
 			input_dir += 1
 		
-		if input_dir != 0:
-			position.x += input_dir * SPEED * delta
-			sprite.flip_h = input_dir < 0
-		return  # skip AI movement when possessed
-	
-	# AI movement 
+		velocity.x = input_dir * SPEED
+		sprite.flip_h = input_dir < 0
 	else:
 		if ray_cast_right.is_colliding():
 			if ray_cast_right.get_collider() == player:
@@ -44,4 +40,6 @@ func _process(delta):
 				direct = 1
 				sprite.flip_h = false
 
-	position.x += direct * SPEED * delta
+		velocity.x = direct * SPEED
+
+	move_and_slide()

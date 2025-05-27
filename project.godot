@@ -13,6 +13,8 @@ config_version=5
 config/name="PP-Game-Jam"
 run/main_scene="uid://b1kx3w8o1etvp"
 config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/use_filter=false
+boot_splash/image="uid://dh0tp05gnogh0"
 config/icon="res://assets/icon.svg"
 
 [dotnet]
