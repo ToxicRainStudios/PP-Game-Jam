@@ -5,7 +5,11 @@ func _ready():
 	queue_free()
 
 func _integrate_forces(state):
-	if get_colliding_bodies().size() > 0:
-		print(get_colliding_bodies()[0].name)
-		if !get_colliding_bodies()[0].name == "player":
-				queue_free()
+	var contact_count = state.get_contact_count()
+	for i in range(contact_count):
+		var collider = state.get_contact_collider_object(i)
+		print("Collided with:", collider.name)
+		if collider and collider.name != "player" and collider.has_method("_start_possession"):
+			collider._start_possession()
+			queue_free()
+			break
