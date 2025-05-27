@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dksy06q8yt0et"]
+[gd_scene load_steps=11 format=3 uid="uid://dksy06q8yt0et"]
 
 [ext_resource type="Script" uid="uid://qtstc1rdhhtf" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://bov6flicqinpk" path="res://assets/player.png" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://yyb3bl7rorns" path="res://scenes/ball.tscn" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://bov6flicqinpk" path="res://assets/player_throw.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://brfjbp8qs363f" path="res://assets/player_powerdown.png" id="4_qlg0r"]
 
 [sub_resource type="Animation" id="Animation_qhqgy"]
 length = 0.6
@@ -50,9 +52,25 @@ tracks/0/keys = {
 "values": [Rect2(0, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(128, 0, 64, 64)]
 }
 
+[sub_resource type="Animation" id="Animation_qlg0r"]
+resource_name = "powerdown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1e-05, 1e-05, 1e-05, 1e-05),
+"update": 0,
+"values": [Rect2(0, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(128, 0, 64, 64), Rect2(192, 0, 64, 64)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqkch"]
 _data = {
 &"RESET": SubResource("Animation_qhqgy"),
+&"powerdown": SubResource("Animation_qlg0r"),
 &"release": SubResource("Animation_dqkch"),
 &"throw": SubResource("Animation_g2els")
 }
@@ -65,6 +83,9 @@ position = Vector2(12, 1)
 scale = Vector2(2, 2)
 collision_layer = 2
 script = ExtResource("1_g2els")
+ball_scene = ExtResource("2_dqkch")
+throw_texture = ExtResource("2_g2els")
+powerdown_texture = ExtResource("4_qlg0r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_g2els")
@@ -77,6 +98,6 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.46768, -0.508992)
+position = Vector2(-5, -0.5)
 rotation = -0.00223017
 shape = SubResource("RectangleShape2D_g2els")

@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+
 func _ready():
 	await get_tree().create_timer(1.5).timeout
 	queue_free()
@@ -25,6 +26,7 @@ func _integrate_forces(state):
 				camera.position = Vector2.ZERO
 				camera.set("current", true)  # Use set() if type mismatch
 				print("Camera reparented to:", target.name)
+				Constants.possessed_something = true
 			else:
 				print("Camera not found")
 			

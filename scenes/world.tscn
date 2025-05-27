@@ -1,7 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://b1lf3r0gb61lt"]
+[gd_scene load_steps=19 format=3 uid="uid://b1lf3r0gb61lt"]
 
 [ext_resource type="PackedScene" uid="uid://dksy06q8yt0et" path="res://scenes/player.tscn" id="1_nnsk1"]
-[ext_resource type="PackedScene" uid="uid://yyb3bl7rorns" path="res://scenes/ball.tscn" id="2_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://cqtmbkm0r3hqm" path="res://scenes/platform.tscn" id="2_rwgxs"]
 [ext_resource type="Shader" uid="uid://oxpyj1jykvgb" path="res://shader/world.gdshader" id="4_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://bqlt8o01v1lwo" path="res://scenes/pickup.tscn" id="4_71j4m"]
@@ -99,7 +98,6 @@ shader_parameter/wave_freq = Vector2(10, 6)
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(720, -1094)
-ball_scene = ExtResource("2_4mrxx")
 
 [node name="Main Camera" type="Camera2D" parent="player"]
 limit_bottom = 350
