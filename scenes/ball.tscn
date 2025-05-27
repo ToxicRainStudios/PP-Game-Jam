@@ -6,6 +6,7 @@
 
 [node name="ball" type="RigidBody2D"]
 contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_7s4qf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -6,4 +6,6 @@ func _ready():
 
 func _integrate_forces(state):
 	if get_colliding_bodies().size() > 0:
-		queue_free()
+		print(get_colliding_bodies()[0].name)
+		if !get_colliding_bodies()[0].name == "player":
+				queue_free()
