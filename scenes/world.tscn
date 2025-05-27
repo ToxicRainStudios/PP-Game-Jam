@@ -1,26 +1,29 @@
-[gd_scene load_steps=18 format=3 uid="uid://b1lf3r0gb61lt"]
+[gd_scene load_steps=20 format=3 uid="uid://b1lf3r0gb61lt"]
 
 [ext_resource type="PackedScene" uid="uid://dksy06q8yt0et" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://yyb3bl7rorns" path="res://scenes/ball.tscn" id="2_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://cqtmbkm0r3hqm" path="res://scenes/platform.tscn" id="2_rwgxs"]
-[ext_resource type="Shader" uid="uid://oxpyj1jykvgb" path="res://scenes/world.gdshader" id="4_7r4gi"]
+[ext_resource type="Shader" uid="uid://oxpyj1jykvgb" path="res://shader/world.gdshader" id="4_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://bqlt8o01v1lwo" path="res://scenes/pickup.tscn" id="4_71j4m"]
 [ext_resource type="Texture2D" uid="uid://b3go7ga4sd8a" path="res://assets/background1.png" id="4_i7141"]
-[ext_resource type="Texture2D" uid="uid://cynq4xfw6xxi0" path="res://assets/ground1.png" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://b7hux2av5we5a" path="res://scenes/enemy1.tscn" id="6_qfnet"]
+[ext_resource type="Shader" uid="uid://mj1lmb5sb41k" path="res://shader/background.gdshader" id="9_7r4gi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w7kh3"]
 shader = ExtResource("4_7r4gi")
-shader_parameter/wave_freq = 10.0
+shader_parameter/wave_freq = 5.0
 shader_parameter/wave_speed = 2.0
-shader_parameter/wave_amp = 0.01
+shader_parameter/wave_amp = 0.009
 shader_parameter/tint_color = Vector4(1, 1, 1, 1)
 shader_parameter/atlas_uv_min = Vector2(2, 0)
 shader_parameter/atlas_uv_max = Vector2(0, 2)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4mrxx"]
+load_path = "res://.godot/imported/ground1.png-8d58674b8670c5227b33839b9d77f29f.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
-texture = ExtResource("4_k0juu")
+texture = SubResource("CompressedTexture2D_4mrxx")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -83,6 +86,13 @@ _data = {
 &"move": SubResource("Animation_4mrxx")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e3hyu"]
+shader = ExtResource("9_7r4gi")
+shader_parameter/time_speed = 0.4
+shader_parameter/wave_strength = 0.01
+shader_parameter/shimmer_strength = 0.02
+shader_parameter/wave_freq = Vector2(10, 6)
+
 [node name="World" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
@@ -106,6 +116,7 @@ position = Vector2(-391, -7)
 [node name="TileMap" type="TileMap" parent="terrain"]
 clip_children = 1
 material = SubResource("ShaderMaterial_w7kh3")
+rotation = 0.00680421
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_qfnet")
 format = 2
@@ -133,7 +144,7 @@ libraries = {
 autoplay = "RESET"
 
 [node name="VapeKnight1" parent="terrain" instance=ExtResource("6_qfnet")]
-position = Vector2(4167, 206)
+position = Vector2(4169, 235)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -143,8 +154,17 @@ motion_scale = Vector2(0.5, 0.5)
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
 texture_repeat = 2
-offset_left = -507.0
-offset_top = -1175.0
-offset_right = 4864.0
-offset_bottom = 1378.0
+material = SubResource("ShaderMaterial_e3hyu")
+offset_left = -501.0
+offset_top = -1126.0
+offset_right = 4870.0
+offset_bottom = 1427.0
 texture = ExtResource("4_i7141")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(-18, -1576)
+rotation = -1.52626
+scale = Vector2(2, 2)
+color = Color(0.580392, 0.0862745, 0.498039, 1)
+energy = 0.15
+max_distance = 7050.0
