@@ -5,16 +5,15 @@ extends CharacterBody2D
 @export var terminalVelocity = 1800
 @export var jump_force = 1000
 @export var ball_scene: PackedScene
-@export var throw_force = Vector2(600, -400)
-
+@export var throw_strength = 800
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animator : AnimationPlayer = $Sprite2D/AnimationPlayer
 
 
 
-
 func _physics_process(delta):
+	var speed2 = speed
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		if velocity.y > terminalVelocity:
@@ -32,13 +31,14 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("possess"):
 		animator.play("throw")
-		print("hi")
+		speed2 -= 100
 	if Input.is_action_just_released("possess"):
 		animator.play("release")
 		_throw_ball()
+		speed2 = speed
 		
 
-	velocity.x = speed * hori_direction  
+	velocity.x = speed2 * hori_direction  
 
 	# Flip sprite depending on direction
 	if hori_direction != 0:
@@ -49,9 +49,12 @@ func _physics_process(delta):
 func _throw_ball():
 	if ball_scene:
 		var ball = ball_scene.instantiate() as RigidBody2D
-		var direction = 1
-		if sprite.flip_h:
-			direction = -1
 		get_parent().add_child(ball)
-		ball.global_position = global_position + Vector2(20 * direction, -10)
-		ball.apply_impulse(Vector2(throw_force.x * direction, throw_force.y))
+		ball.global_position = global_position
+		
+		var mouse_pos = get_global_mouse_position()
+		var direction = (mouse_pos - ball.global_position).normalized()
+				
+		var impulse = direction * throw_strength
+		
+		ball.apply_impulse(impulse)
