@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1kx3w8o1etvp"]
+[gd_scene load_steps=4 format=3 uid="uid://b1kx3w8o1etvp"]
 
 [ext_resource type="Script" uid="uid://dfhckiq6tggqf" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://dsei5kecx8hyx" path="res://assets/main_menu_ground.png" id="2_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://c8tck1tx5bb1s" path="res://assets/logo.png" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://do7i6wkasnhu4" path="res://assets/main_menu_background.png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://b2gq4ymy4deqx" path="res://assets/main_menu.png" id="2_wu84c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
 font_color = Color(0, 0, 0, 1)
@@ -24,28 +22,22 @@ offset_right = 1152.0
 offset_bottom = 657.0
 texture = ExtResource("2_wu84c")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("2_bqqt6")
-
 [node name="Label2" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 2
 offset_left = 1032.0
-offset_top = 625.0
+offset_top = -3.0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 20.0
 text = "2025 Toxic Rain"
 label_settings = SubResource("LabelSettings_bqqt6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 343.0
-offset_right = 328.0
-offset_bottom = 447.0
+offset_left = 200.0
+offset_top = 578.0
+offset_right = 989.0
+offset_bottom = 696.0
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -55,14 +47,6 @@ script = ExtResource("1_l6cm7")
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Button2"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -339.0
-offset_right = 476.0
-offset_bottom = -42.0
-texture = ExtResource("2_ekxnf")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_quit_button_pressed"]
