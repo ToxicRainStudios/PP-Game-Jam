@@ -161,7 +161,7 @@ motion_scale = Vector2(0.5, 0.5)
 texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_e3hyu")
-offset_left = -486.0
+offset_left = -874.0
 offset_top = -1702.0
 offset_right = 8016.0
 offset_bottom = 2899.0
@@ -170,8 +170,8 @@ stretch_mode = 1
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(-18, -1576)
-rotation = -1.52626
+rotation = -3.11585
 scale = Vector2(2, 2)
 color = Color(0.580392, 0.0862745, 0.498039, 1)
-energy = 0.15
+energy = 0.35
 max_distance = 7050.0
