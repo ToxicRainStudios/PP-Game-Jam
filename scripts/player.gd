@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var terminalVelocity = 1800
 @export var jump_force = 16000
 
+@onready var sprite = $Sprite2D
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -16,5 +18,9 @@ func _physics_process(delta):
 
 	var hori_direction = Input.get_axis("move_left", "move_right")
 	velocity.x = speed * hori_direction  
+
+	# Flip sprite depending on direction
+	if hori_direction != 0:
+		sprite.flip_h = hori_direction < 0
 
 	move_and_slide()

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3go7ga4sd8a" path="res://assets/background1.png" id="4_i7141"]
 [ext_resource type="Texture2D" uid="uid://cynq4xfw6xxi0" path="res://assets/ground1.png" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="5_71j4m"]
-[ext_resource type="PackedScene" uid="uid://b7hux2av5we5a" path="res://scenes/enemy1.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" path="res://scenes/enemy1.tscn" id="6_qfnet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
 texture = ExtResource("4_k0juu")
@@ -33,6 +33,22 @@ sources/1 = SubResource("TileSetAtlasSource_4mrxx")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qfnet"]
 
+[sub_resource type="Animation" id="Animation_7r4gi"]
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2297, 258), Vector2(3351, 258)]
+}
+
 [sub_resource type="Animation" id="Animation_4mrxx"]
 resource_name = "move"
 length = 4.0
@@ -48,22 +64,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(2296, 258), Vector2(3348, 258)]
-}
-
-[sub_resource type="Animation" id="Animation_7r4gi"]
-length = 4.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2297, 258), Vector2(3351, 258)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w7kh3"]
