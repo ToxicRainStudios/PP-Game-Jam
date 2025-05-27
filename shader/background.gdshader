@@ -19,8 +19,14 @@ void fragment() {
     // Sample the texture
     vec4 tex_color = texture(TEXTURE, uv);
 
-    // Add shimmer/light sweep effect
-    float shimmer = sin((UV.x + t * 0.2) * 30.0) * shimmer_strength;
+    // Add shimmer/light sweep effect with anti-aliasing
+    float shimmer_pos = (UV.x + t * 0.2) * 30.0;
+    float shimmer_raw = sin(shimmer_pos);
+    
+    // Compute shimmer derivative and apply smoothstep for AA
+    float width = fwidth(shimmer_pos); // Pixel-space rate of change
+    float shimmer = smoothstep(-width, width, shimmer_raw) * shimmer_strength;
+
     tex_color.rgb += shimmer;
 
     COLOR = tex_color;

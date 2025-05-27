@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cqtmbkm0r3hqm" path="res://scenes/platform.tscn" id="2_rwgxs"]
 [ext_resource type="Shader" uid="uid://oxpyj1jykvgb" path="res://shader/world.gdshader" id="4_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://bqlt8o01v1lwo" path="res://scenes/pickup.tscn" id="4_71j4m"]
-[ext_resource type="Texture2D" uid="uid://b3go7ga4sd8a" path="res://assets/background1.png" id="4_i7141"]
 [ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://b7hux2av5we5a" path="res://scenes/enemy1.tscn" id="6_qfnet"]
 [ext_resource type="Shader" uid="uid://mj1lmb5sb41k" path="res://shader/background.gdshader" id="9_7r4gi"]
@@ -34,8 +33,11 @@ texture_region_size = Vector2i(64, 64)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7r4gi"]
+load_path = "res://.godot/imported/background1.png-a44d78bededebe7a201c901af9d9ce13.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mrxx"]
-texture = ExtResource("4_i7141")
+texture = SubResource("CompressedTexture2D_7r4gi")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
@@ -155,11 +157,12 @@ motion_scale = Vector2(0.5, 0.5)
 texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_e3hyu")
-offset_left = -501.0
-offset_top = -1126.0
-offset_right = 4870.0
-offset_bottom = 1427.0
-texture = ExtResource("4_i7141")
+offset_left = -486.0
+offset_top = -1702.0
+offset_right = 8016.0
+offset_bottom = 2899.0
+texture = SubResource("CompressedTexture2D_7r4gi")
+stretch_mode = 1
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(-18, -1576)
