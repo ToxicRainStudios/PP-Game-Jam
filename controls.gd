@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	var timer = Timer.new()
-	timer.wait_time = 5
+	timer.wait_time = 2
 	timer.one_shot = true
 	timer.autostart = true
 	add_child(timer)
