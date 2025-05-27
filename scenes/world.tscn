@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://b1lf3r0gb61lt"]
+[gd_scene load_steps=16 format=3 uid="uid://b1lf3r0gb61lt"]
 
 [ext_resource type="PackedScene" uid="uid://dksy06q8yt0et" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://yyb3bl7rorns" path="res://scenes/ball.tscn" id="2_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://cqtmbkm0r3hqm" path="res://scenes/platform.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://bqlt8o01v1lwo" path="res://scenes/pickup.tscn" id="4_71j4m"]
 [ext_resource type="Texture2D" uid="uid://b3go7ga4sd8a" path="res://assets/background1.png" id="4_i7141"]
@@ -76,6 +77,7 @@ _data = {
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(-10, -217)
+ball_scene = ExtResource("2_4mrxx")
 
 [node name="Main Camera" type="Camera2D" parent="player"]
 limit_bottom = 350
