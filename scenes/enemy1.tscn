@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7hux2av5we5a"]
+
+[ext_resource type="Script" uid="uid://wb55l07tpebu" path="res://scripts/knight.gd" id="1_n665k"]
+[ext_resource type="Texture2D" uid="uid://dh0tp05gnogh0" path="res://assets/vapeKnight.png" id="1_nb0t0"]
+[ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="2_n665k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lowyn"]
+size = Vector2(600, 920)
+
+[node name="knight" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_n665k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nb0t0")
+
+[node name="Death Zone" parent="." instance=ExtResource("2_n665k")]
+position = Vector2(-277, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Zone"]
+position = Vector2(297, 127)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lowyn")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 3.8147e-06)
+target_position = Vector2(1000, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(0, 3.8147e-06)
+target_position = Vector2(-1000, 0)

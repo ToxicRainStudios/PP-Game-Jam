@@ -19,3 +19,4 @@ region_rect = Rect2(0, 49.4002, 64, 14.5998)
 position = Vector2(-69, 23)
 scale = Vector2(0.75, 0.5)
 shape = SubResource("RectangleShape2D_s8bxr")
+one_way_collision = true
