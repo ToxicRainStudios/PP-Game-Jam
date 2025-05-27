@@ -25,7 +25,6 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		if velocity.y > terminalVelocity:
 			velocity.y = terminalVelocity
-	print(Constants.possessed_something)
 	
 	if Constants.possessed_something == false:
 		if Input.is_action_just_pressed("jump") and is_on_floor():

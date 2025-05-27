@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://b1lf3r0gb61lt"]
+[gd_scene load_steps=21 format=3 uid="uid://b1lf3r0gb61lt"]
 
+[ext_resource type="Shader" uid="uid://dvgl0a0duep3r" path="res://shader/all.gdshader" id="1_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dksy06q8yt0et" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://cqtmbkm0r3hqm" path="res://scenes/platform.tscn" id="2_rwgxs"]
 [ext_resource type="Shader" uid="uid://oxpyj1jykvgb" path="res://shader/world.gdshader" id="4_7r4gi"]
@@ -8,11 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://b7hux2av5we5a" path="res://scenes/enemy1.tscn" id="6_qfnet"]
 [ext_resource type="Shader" uid="uid://mj1lmb5sb41k" path="res://shader/background.gdshader" id="9_7r4gi"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7r4gi"]
+shader = ExtResource("1_4mrxx")
+shader_parameter/time = 0.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w7kh3"]
 shader = ExtResource("4_7r4gi")
 shader_parameter/wave_freq = 5.0
 shader_parameter/wave_speed = 2.0
-shader_parameter/wave_amp = 0.009
+shader_parameter/wave_amp = 0.005
 shader_parameter/tint_color = Vector4(1, 1, 1, 1)
 shader_parameter/atlas_uv_min = Vector2(2, 0)
 shader_parameter/atlas_uv_max = Vector2(0, 2)
@@ -95,6 +100,7 @@ shader_parameter/shimmer_strength = 0.02
 shader_parameter/wave_freq = Vector2(10, 6)
 
 [node name="World" type="Node2D"]
+material = SubResource("ShaderMaterial_7r4gi")
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(720, -1094)

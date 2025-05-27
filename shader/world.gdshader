@@ -1,5 +1,5 @@
 shader_type canvas_item;
-uniform float wave_freq = 10.0;
+uniform float wave_freq = 5.0;
 uniform float wave_speed = 2.0;
 uniform float wave_amp = 0.01;
 uniform vec4 tint_color = vec4(1.0, 1.0, 1.0, 1.0);
