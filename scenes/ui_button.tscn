@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxo7pwfeushee"]
+
+[ext_resource type="Shader" uid="uid://biokynl8lc7ed" path="res://shader/ui_button.gdshader" id="1_pp85k"]
+[ext_resource type="Script" uid="uid://bf7nx7qh1dx0n" path="res://scripts/ui_button.gd" id="1_w6hbx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kv3qf"]
+shader = ExtResource("1_pp85k")
+shader_parameter/hovered = false
+shader_parameter/base_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pp85k"]
+font_size = 23
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_w6hbx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 147.0
+offset_bottom = 123.0
+color = Color(1, 0.176471, 1, 1)
+
+[node name="ButtonArea" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kv3qf")
+offset_right = 147.0
+offset_bottom = 123.0
+color = Color(0.188235, 0.0117647, 0.313726, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 147.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "I am button"
+label_settings = SubResource("LabelSettings_pp85k")
+horizontal_alignment = 1
+vertical_alignment = 1

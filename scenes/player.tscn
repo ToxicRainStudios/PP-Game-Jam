@@ -35,6 +35,21 @@ tracks/0/keys = {
 "values": [Rect2(0, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(128, 0, 64, 64), Rect2(192, 0, 64, 64)]
 }
 
+[sub_resource type="Animation" id="Animation_tuyoq"]
+resource_name = "powerup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1e-05, 4.16882e-05, 0.000601144, 4.16883e-05),
+"update": 0,
+"values": [Rect2(192, 0, 64, 64), Rect2(128, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(0, 0, 64, 64)]
+}
+
 [sub_resource type="Animation" id="Animation_dqkch"]
 resource_name = "release"
 length = 0.5
@@ -65,21 +80,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.933034, 0.933034, 0.933034),
 "update": 1,
 "values": [Rect2(0, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(128, 0, 64, 64)]
-}
-
-[sub_resource type="Animation" id="Animation_tuyoq"]
-resource_name = "powerup"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1e-05, 4.16882e-05, 0.000601144, 4.16883e-05),
-"update": 0,
-"values": [Rect2(192, 0, 64, 64), Rect2(128, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(0, 0, 64, 64)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqkch"]
