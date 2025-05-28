@@ -52,7 +52,7 @@ func _physics_process(delta):
 				Constants.restore_camera_to_player()
 				animator.stop()
 				sprite.texture = powerdown_texture
-				Constants.play_sound_effect("res://luminousfridge__os-start.ogg")
+				Constants.play_sound_effect("res://sounds/luminousfridge__os-start.ogg")
 				animator.play("powerup")
 				Constants.possessed_something = false
 			
