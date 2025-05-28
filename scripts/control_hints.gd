@@ -1,13 +1,18 @@
 extends Node2D
 
-@export var display_duration := 10.0  # Time in seconds to show controls
+@export var display_duration := 100000.0  # Time in seconds to show controls
 @onready var player = get_parent()
 
 @export var control_hints := [
-	{"text": "← Move Left (A)", "side": "left"},
-	{"text": "→ Move Right (D)", "side": "right"},
-	{"text": "↑ Jump (Space)", "side": "top"},
+	{"text": "← A", "side": "left"},
+	{"text": "→ D", "side": "right"},
+	{"text": "↑ Space", "side": "top"},
 ]
+
+@export var offset_left := Vector2(-100, 0)
+@export var offset_right := Vector2(100, 0)
+@export var offset_top := Vector2(0, -60)
+@export var offset_bottom := Vector2(0, 60)
 
 func _ready():
 	for hint in control_hints:
@@ -21,12 +26,12 @@ func _ready():
 	hide_all_labels()
 
 func _process(_delta):
-	# Keep labels following the player's position
-	var pos = player.global_position
-	if has_node("LabelLeft"):  $LabelLeft.global_position  = pos + Vector2(-100, 0)
-	if has_node("LabelRight"): $LabelRight.global_position = pos + Vector2(100, 0)
-	if has_node("LabelTop"):   $LabelTop.global_position   = pos + Vector2(0, -60)
-	if has_node("LabelBottom"):$LabelBottom.global_position= pos + Vector2(0, 60)
+	var center = player.global_position  # This assumes the origin is the center
+
+	if has_node("LabelLeft"):   $LabelLeft.global_position   = center + offset_left
+	if has_node("LabelRight"):  $LabelRight.global_position  = center + offset_right
+	if has_node("LabelTop"):    $LabelTop.global_position    = center + offset_top
+	if has_node("LabelBottom"): $LabelBottom.global_position = center + offset_bottom
 
 func hide_all_labels():
 	for side in ["Left", "Right", "Top", "Bottom"]:

@@ -109,6 +109,9 @@ position = Vector2(720, -1094)
 [node name="ControlHints" parent="player" instance=ExtResource("3_7r4gi")]
 position = Vector2(-360, 547)
 scale = Vector2(0.5, 0.5)
+offset_left = Vector2(-70, 0)
+offset_right = Vector2(20, 0)
+offset_top = Vector2(-20, -75)
 
 [node name="Main Camera" type="Camera2D" parent="player"]
 limit_bottom = 350
