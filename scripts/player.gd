@@ -22,7 +22,6 @@ func _physics_process(delta):
 
 	if !Constants.possessed_something:
 		update_movement(delta)  # inherited from base class
-
 		
 		if direction > 0:
 			sprite.flip_h = false
@@ -47,6 +46,16 @@ func _physics_process(delta):
 				animator.play("powerdown")
 
 		velocity.x = direction * current_speed
+	else:
+		if Input.is_action_just_released("unpossess"):
+				print("waking back up")
+				Constants.restore_camera_to_player()
+				animator.stop()
+				sprite.texture = powerdown_texture
+				Constants.play_sound_effect("res://luminousfridge__os-start.ogg")
+				animator.play("powerup")
+				Constants.possessed_something = false
+			
 
 func _throw_ball():
 	if ball_scene:

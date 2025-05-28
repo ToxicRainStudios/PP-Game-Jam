@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dksy06q8yt0et"]
+[gd_scene load_steps=12 format=3 uid="uid://dksy06q8yt0et"]
 
 [ext_resource type="Script" uid="uid://qtstc1rdhhtf" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://yyb3bl7rorns" path="res://scenes/ball.tscn" id="2_dqkch"]
@@ -67,10 +67,26 @@ tracks/0/keys = {
 "values": [Rect2(0, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(128, 0, 64, 64)]
 }
 
+[sub_resource type="Animation" id="Animation_tuyoq"]
+resource_name = "powerup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1e-05, 4.16882e-05, 0.000601144, 4.16883e-05),
+"update": 0,
+"values": [Rect2(192, 0, 64, 64), Rect2(128, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(0, 0, 64, 64)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqkch"]
 _data = {
 &"RESET": SubResource("Animation_qhqgy"),
 &"powerdown": SubResource("Animation_qlg0r"),
+&"powerup": SubResource("Animation_tuyoq"),
 &"release": SubResource("Animation_dqkch"),
 &"throw": SubResource("Animation_g2els")
 }
