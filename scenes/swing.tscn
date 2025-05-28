@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://se5urtetxypo"]
+
+[ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="1_w1r5j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gu87f"]
+radius = 19.0
+height = 48.0
+
+[node name="Swing Area" type="Node2D"]
+
+[node name="Death Zone" parent="." instance=ExtResource("1_w1r5j")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Zone"]
+shape = SubResource("CapsuleShape2D_gu87f")

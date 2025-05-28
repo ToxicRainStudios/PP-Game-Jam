@@ -10,6 +10,8 @@ extends BaseCharacter2D
 @onready var animator: AnimationPlayer = $Sprite2D/AnimationPlayer
 
 var current_ball: RigidBody2D = null
+var direction = get_horizontal_input()
+
 
 func _ready():
 	sprite.region_enabled = true
@@ -21,7 +23,7 @@ func _physics_process(delta):
 	if !Constants.possessed_something:
 		update_movement(delta)  # inherited from base class
 
-		var direction = get_horizontal_input()
+		
 		if direction > 0:
 			sprite.flip_h = false
 		elif direction < 0:

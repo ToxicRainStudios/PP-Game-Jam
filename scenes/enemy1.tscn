@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7hux2av5we5a"]
+[gd_scene load_steps=8 format=3 uid="uid://b7hux2av5we5a"]
 
 [ext_resource type="Script" uid="uid://wb55l07tpebu" path="res://scripts/knight.gd" id="1_n665k"]
 [ext_resource type="Texture2D" uid="uid://dh0tp05gnogh0" path="res://assets/vapeKnight.png" id="1_nb0t0"]
+[ext_resource type="PackedScene" uid="uid://se5urtetxypo" path="res://scenes/swing.tscn" id="3_n665k"]
+
+[sub_resource type="Animation" id="Animation_nb0t0"]
+resource_name = "swing"
+length = 0.76667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.366667, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_n665k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lowyn"]
+_data = {
+&"RESET": SubResource("Animation_n665k"),
+&"swing": SubResource("Animation_nb0t0")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb0t0"]
-size = Vector2(640, 940)
+size = Vector2(52, 96)
 
 [node name="knight" type="CharacterBody2D"]
 script = ExtResource("1_n665k")
@@ -22,10 +60,24 @@ target_position = Vector2(-1000, 0)
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+position = Vector2(-66, -67)
+scale = Vector2(2, 2)
 texture = ExtResource("1_nb0t0")
+centered = false
+hframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_lowyn")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 4)
-scale = Vector2(0.1, 0.1)
+position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_nb0t0")
+
+[node name="Swing Area" parent="." instance=ExtResource("3_n665k")]
+scale = Vector2(2, 2)
+
+[connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

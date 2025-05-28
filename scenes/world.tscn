@@ -150,7 +150,7 @@ libraries = {
 autoplay = "RESET"
 
 [node name="VapeKnight1" parent="terrain" instance=ExtResource("6_qfnet")]
-position = Vector2(4169, 235)
+position = Vector2(4169, 143)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -162,9 +162,9 @@ texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_e3hyu")
 offset_left = -874.0
-offset_top = -1702.0
+offset_top = -1700.0
 offset_right = 8016.0
-offset_bottom = 2899.0
+offset_bottom = 2901.0
 texture = SubResource("CompressedTexture2D_7r4gi")
 stretch_mode = 1
 
