@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqlt8o01v1lwo"]
 
 [ext_resource type="Script" uid="uid://damxga6wlheod" path="res://scripts/pickup.gd" id="1_7cqbe"]
-[ext_resource type="Texture2D" uid="uid://cm3ar6omx3o1" path="res://assets/battery.png" id="1_pg2rt"]
+[ext_resource type="Texture2D" uid="uid://b0v8rv48h48hv" path="res://assets/battery.png" id="1_pg2rt"]
 
 [sub_resource type="Animation" id="Animation_7cqbe"]
 length = 0.001
