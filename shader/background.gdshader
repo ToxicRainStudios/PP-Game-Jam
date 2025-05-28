@@ -22,7 +22,7 @@ void fragment() {
     // Add shimmer/light sweep effect with anti-aliasing
     float shimmer_pos = (UV.x + t * 0.2) * 30.0;
     float shimmer_raw = sin(shimmer_pos);
-    
+
     // Compute shimmer derivative and apply smoothstep for AA
     float width = fwidth(shimmer_pos); // Pixel-space rate of change
     float shimmer = smoothstep(-width, width, shimmer_raw) * shimmer_strength;
