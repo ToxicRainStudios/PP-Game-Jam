@@ -11,7 +11,7 @@ shader_parameter/base_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_pp85k"]
 font_size = 23
 
-[node name="Node2D" type="Node2D"]
+[node name="UiButton" type="Node2D"]
 script = ExtResource("1_w6hbx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -23,7 +23,7 @@ color = Color(1, 0.176471, 1, 1)
 material = SubResource("ShaderMaterial_kv3qf")
 offset_right = 147.0
 offset_bottom = 123.0
-color = Color(0.188235, 0.0117647, 0.313726, 1)
+color = Color(0.541232, 0.279614, 0.649232, 1)
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 15

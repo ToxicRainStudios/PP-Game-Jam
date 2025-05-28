@@ -38,6 +38,15 @@ offset_right = 91.0
 offset_bottom = 23.0
 text = "Level Select"
 
-[node name="Node2D" parent="Label" instance=ExtResource("2_vttqt")]
-position = Vector2(192, 117)
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 81.0
+offset_top = 85.0
+offset_right = 389.0
+offset_bottom = 242.0
+
+[node name="Node2D" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
+visible = false
+
+[node name="UiButtonLevel1" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
+position = Vector2(153, 0)
 label_text = "1"
