@@ -10,7 +10,7 @@ void fragment() {
 	vec4 color = base_color;
 
 	if (hovered) {
-		float offset = sin(time * 6.0) * 0.005;
+		float offset = sin(time * 6.0) * 0.009;
 
 		// RGB channel split using screen samples
 		float r = texture(SCREEN_TEXTURE, uv + vec2(offset, 0.0)).r;
