@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://b1lf3r0gb61lt"]
+[gd_scene load_steps=22 format=3 uid="uid://b1lf3r0gb61lt"]
 
 [ext_resource type="Shader" uid="uid://dvgl0a0duep3r" path="res://shader/all.gdshader" id="1_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dksy06q8yt0et" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://cqtmbkm0r3hqm" path="res://scenes/platform.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://4fn2nqs14tjm" path="res://scenes/control_hints.tscn" id="3_7r4gi"]
 [ext_resource type="Shader" uid="uid://oxpyj1jykvgb" path="res://shader/world.gdshader" id="4_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://bqlt8o01v1lwo" path="res://scenes/pickup.tscn" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="5_71j4m"]
@@ -104,6 +105,10 @@ material = SubResource("ShaderMaterial_7r4gi")
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(720, -1094)
+
+[node name="ControlHints" parent="player" instance=ExtResource("3_7r4gi")]
+position = Vector2(-360, 547)
+scale = Vector2(0.5, 0.5)
 
 [node name="Main Camera" type="Camera2D" parent="player"]
 limit_bottom = 350

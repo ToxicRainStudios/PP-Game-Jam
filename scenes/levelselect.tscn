@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dglak2a6teq43"]
 
 [ext_resource type="Shader" uid="uid://mj1lmb5sb41k" path="res://shader/background.gdshader" id="1_xuh2y"]
+[ext_resource type="Texture2D" uid="uid://soa1wg4whk17" path="res://assets/background2.png" id="2_4kdbh"]
 [ext_resource type="PackedScene" uid="uid://dxo7pwfeushee" path="res://scenes/ui_button.tscn" id="2_vttqt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vttqt"]
@@ -9,9 +10,6 @@ shader_parameter/time_speed = 0.4
 shader_parameter/wave_strength = 0.01
 shader_parameter/shimmer_strength = 0.02
 shader_parameter/wave_freq = Vector2(10, 6)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4kdbh"]
-load_path = "res://.godot/imported/background1.png-a44d78bededebe7a201c901af9d9ce13.ctex"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,7 +27,7 @@ layout_mode = 0
 offset_top = -2.0
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = SubResource("CompressedTexture2D_4kdbh")
+texture = ExtResource("2_4kdbh")
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
