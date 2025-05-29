@@ -4,6 +4,7 @@ extends Node
 var possessed_something = false
 
 var camera_owner: Node = null  # Track who currently owns the camera
+var possessed_target: Node = null
 
 func reparent_camera(new_parent: Node):
 	var player = get_node("/root/World/player")

@@ -1,9 +1,8 @@
-extends BaseCharacter2D
+extends PossessableTarget2D
 
 const SPEED = 60
 
 var direct = 1
-var is_possessed = false
 var animation_finished = true
 
 @onready var ray_cast_left: RayCast2D = $RayCast2D2
@@ -11,9 +10,6 @@ var animation_finished = true
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var Animator: AnimationPlayer = $Sprite2D/AnimationPlayer
 @onready var swing_area = $"Swing Area"
-
-func _start_possession():
-	is_possessed = true
 	
 func _swing():
 	velocity.x = 0

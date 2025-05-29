@@ -50,6 +50,7 @@ func _physics_process(delta):
 		if Input.is_action_just_released("unpossess"):
 				print("waking back up")
 				Constants.restore_camera_to_player()
+				Constants.possessed_target._end_possession()
 				animator.stop()
 				sprite.texture = powerdown_texture
 				Constants.play_sound_effect("res://sounds/luminousfridge__os-start.ogg")

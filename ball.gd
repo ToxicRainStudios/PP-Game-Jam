@@ -1,10 +1,9 @@
 extends RigidBody2D
 
-
 func _ready():
 	await get_tree().create_timer(1.5).timeout
 	queue_free()
-	
+
 func _integrate_forces(state):
 	var contact_count = state.get_contact_count()
 	for i in range(contact_count):
@@ -17,7 +16,8 @@ func _integrate_forces(state):
 		if target and target.name != "player":
 			print("Starting possession on:", target.name)
 			target._start_possession()
-			
+
+			Constants.possessed_target = target
 			Constants.reparent_camera(target)
 			queue_free()
 			break
