@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var display_duration := 100000.0  # Time in seconds to show controls
+@export var display_duration := 10.0  # Time in seconds to show controls
 @onready var player = get_parent()
 
 @export var control_hints := [

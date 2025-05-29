@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dglak2a6teq43"]
+[gd_scene load_steps=7 format=3 uid="uid://dglak2a6teq43"]
 
 [ext_resource type="Shader" uid="uid://mj1lmb5sb41k" path="res://shader/background.gdshader" id="1_xuh2y"]
 [ext_resource type="Texture2D" uid="uid://soa1wg4whk17" path="res://assets/background2.png" id="2_4kdbh"]
 [ext_resource type="PackedScene" uid="uid://dxo7pwfeushee" path="res://scenes/ui_button.tscn" id="2_vttqt"]
+[ext_resource type="Script" uid="uid://b6f2k4uth5qth" path="res://scenes/miami_label.gd" id="3_nqy8e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vttqt"]
 shader = ExtResource("1_xuh2y")
@@ -10,6 +11,9 @@ shader_parameter/time_speed = 0.4
 shader_parameter/wave_strength = 0.01
 shader_parameter/shimmer_strength = 0.02
 shader_parameter/wave_freq = Vector2(10, 6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqy8e"]
+font_size = 40
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -32,20 +36,25 @@ stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 91.0
-offset_bottom = 23.0
+offset_left = 135.0
+offset_top = 72.0
+offset_right = 360.0
+offset_bottom = 127.0
 text = "Level Select"
+label_settings = SubResource("LabelSettings_nqy8e")
+script = ExtResource("3_nqy8e")
+text_to_display = "Select a Level"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 81.0
-offset_top = 85.0
-offset_right = 389.0
-offset_bottom = 242.0
+offset_left = 65.0
+offset_top = 84.0
+offset_right = 373.0
+offset_bottom = 241.0
 
 [node name="Node2D" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
 visible = false
 
 [node name="UiButtonLevel1" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
-position = Vector2(153, 0)
+position = Vector2(141, 68)
 label_text = "1"
