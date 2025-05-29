@@ -10,7 +10,7 @@ func _integrate_forces(state):
 		var collider = state.get_contact_collider_object(i)
 
 		var target = collider
-		while target and not target.has_method("_start_possession"):
+		while target and not (target is PossessableTarget2D):
 			target = target.get_parent()
 
 		if target and target.name != "player":
