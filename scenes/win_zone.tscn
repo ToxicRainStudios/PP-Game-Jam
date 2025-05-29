@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccp78og5lgqp4"]
+
+[ext_resource type="Script" uid="uid://c3510hcyhkd27" path="res://win_zone.gd" id="1_q11my"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q11my"]
+
+[node name="WinZone" type="Node2D"]
+position = Vector2(29, 145)
+script = ExtResource("1_q11my")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(45.8417, 14.4777)
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.0625, 1)
+shape = SubResource("RectangleShape2D_q11my")

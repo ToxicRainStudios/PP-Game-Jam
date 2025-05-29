@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b1lf3r0gb61lt"]
+[gd_scene load_steps=23 format=3 uid="uid://b1lf3r0gb61lt"]
 
 [ext_resource type="Shader" uid="uid://dvgl0a0duep3r" path="res://shader/all.gdshader" id="1_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dksy06q8yt0et" path="res://scenes/player.tscn" id="1_nnsk1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://b7hux2av5we5a" path="res://scenes/enemy1.tscn" id="6_qfnet"]
 [ext_resource type="Shader" uid="uid://mj1lmb5sb41k" path="res://shader/background.gdshader" id="9_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://ccp78og5lgqp4" path="res://scenes/win_zone.tscn" id="10_w7kh3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7r4gi"]
 shader = ExtResource("1_4mrxx")
@@ -184,3 +185,6 @@ scale = Vector2(2, 2)
 color = Color(0.580392, 0.0862745, 0.498039, 1)
 energy = 0.35
 max_distance = 7050.0
+
+[node name="WinZone" parent="." instance=ExtResource("10_w7kh3")]
+position = Vector2(-167, -24)
