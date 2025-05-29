@@ -45,15 +45,15 @@ func restore_camera_to_player():
 		print("Camera not found or not tracked")
 		
 func play_sound_effect(path: String):
-	var player = AudioStreamPlayer.new()
-	player.stream = load(path)
-	get_tree().get_root().add_child(player)
-	player.play()
+	var audioPlayer = AudioStreamPlayer.new()
+	audioPlayer.stream = load(path)
+	get_tree().get_root().add_child(audioPlayer)
+	audioPlayer.play()
 
-	var duration = player.stream.get_length()
+	var duration = audioPlayer.stream.get_length()
 	var timer = Timer.new()
 	timer.wait_time = duration
 	timer.one_shot = true
-	timer.connect("timeout", Callable(player, "queue_free"))
-	player.add_child(timer)
+	timer.connect("timeout", Callable(audioPlayer, "queue_free"))
+	audioPlayer.add_child(timer)
 	timer.start()
