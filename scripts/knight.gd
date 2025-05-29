@@ -11,8 +11,10 @@ var animation_finished = true
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var Animator: AnimationPlayer = $Sprite2D/AnimationPlayer
 @onready var swing_area = $"Swing Area"
+
 func _start_possession():
 	is_possessed = true
+	
 func _swing():
 	velocity.x = 0
 	animation_finished = false
@@ -24,8 +26,8 @@ func _swing():
 func _physics_process(delta):
 	var player = $"../../player"
 
-	# Use inherited gravity
 	apply_gravity(delta)
+
 	if not animation_finished:
 		print("waiting for anim to finish")
 		velocity.x = 0
@@ -38,32 +40,34 @@ func _physics_process(delta):
 
 		velocity.x = input_dir * SPEED
 		sprite.flip_h = input_dir < 0
+		swing_area.position.x = 30 if not sprite.flip_h else -30  # flip swing area too
+
+		# Handle swing input
+		if Input.is_action_just_pressed("possess"):
+			_swing()
 	else:
 		if ray_cast_right.is_colliding():
-			
 			if ray_cast_right.get_collider() == player:
-				swing_area.move_local_x(30)
-				sprite.flip_h=false
+				swing_area.position.x = 30
+				sprite.flip_h = false
 				_swing()
 				direct = 1
-				
 			else:
-				sprite.flip_h=true
+				sprite.flip_h = true
 				direct = -1
 		elif ray_cast_left.is_colliding():
-			
 			if ray_cast_left.get_collider() == player:
-				sprite.flip_h=true
+				swing_area.position.x = -30
+				sprite.flip_h = true
 				_swing()
 				direct = -1
 			else:
-				sprite.flip_h=false
+				sprite.flip_h = false
 				direct = 1
-		
-		velocity.x = direct*SPEED
-		
-	move_and_slide()
 
+		velocity.x = direct * SPEED
+
+	move_and_slide()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName):
