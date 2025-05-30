@@ -21,8 +21,7 @@ func _physics_process(delta):
 		velocity.x = input_dir_x * SPEED
 		velocity.y = input_dir_y * FLY_SPEED
 	else:
-		# Gravity applies sssssonly when not possessed
-		apply_gravity(delta)
 		velocity.x = direct * SPEED
 
+	apply_gravity(delta)
 	move_and_slide()
