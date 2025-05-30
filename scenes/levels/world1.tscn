@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://4fn2nqs14tjm" path="res://scenes/control_hints.tscn" id="3_4pgdw"]
 [ext_resource type="PackedScene" uid="uid://bqlt8o01v1lwo" path="res://scenes/pickup.tscn" id="4_afs5x"]
 [ext_resource type="Shader" uid="uid://oxpyj1jykvgb" path="res://shader/world.gdshader" id="5_r04jj"]
+[ext_resource type="Texture2D" uid="uid://dyx184nr5ukc2" path="res://assets/ground1.png" id="6_4pgdw"]
 [ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="6_hrhcv"]
 [ext_resource type="PackedScene" uid="uid://cqtmbkm0r3hqm" path="res://scenes/platform.tscn" id="7_42at4"]
 [ext_resource type="PackedScene" uid="uid://b7hux2av5we5a" path="res://scenes/enemy1.tscn" id="8_qrxl2"]
@@ -25,11 +26,8 @@ shader_parameter/tint_color = Vector4(1, 1, 1, 1)
 shader_parameter/atlas_uv_min = Vector2(2, 0)
 shader_parameter/atlas_uv_max = Vector2(0, 2)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4mrxx"]
-load_path = "res://.godot/imported/ground1.png-8d58674b8670c5227b33839b9d77f29f.ctex"
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
-texture = SubResource("CompressedTexture2D_4mrxx")
+texture = ExtResource("6_4pgdw")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
