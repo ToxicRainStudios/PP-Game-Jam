@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://mj1lmb5sb41k" path="res://shader/background.gdshader" id="1_xuh2y"]
 [ext_resource type="Texture2D" uid="uid://soa1wg4whk17" path="res://assets/background2.png" id="2_4kdbh"]
 [ext_resource type="PackedScene" uid="uid://dxo7pwfeushee" path="res://scenes/ui_button.tscn" id="2_vttqt"]
-[ext_resource type="Script" uid="uid://b6f2k4uth5qth" path="res://scenes/miami_label.gd" id="3_nqy8e"]
+[ext_resource type="Script" uid="uid://b6f2k4uth5qth" path="res://scripts/miami_label.gd" id="3_nqy8e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vttqt"]
 shader = ExtResource("1_xuh2y")
@@ -29,8 +29,8 @@ texture_repeat = 2
 material = SubResource("ShaderMaterial_vttqt")
 layout_mode = 0
 offset_top = -2.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1921.0
+offset_bottom = 1079.0
 texture = ExtResource("2_4kdbh")
 stretch_mode = 1
 
