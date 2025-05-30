@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccp78og5lgqp4"]
+[gd_scene load_steps=6 format=3 uid="uid://ccp78og5lgqp4"]
 
 [ext_resource type="Script" uid="uid://c3510hcyhkd27" path="res://win_zone.gd" id="1_q11my"]
 [ext_resource type="Shader" uid="uid://dfdt4g6wcauwr" path="res://scripts/win.gdshader" id="2_r87n5"]
+[ext_resource type="Texture2D" uid="uid://k3olwiyqg8rj" path="res://assets/gate.png" id="3_rjk57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q11my"]
+size = Vector2(120.293, 20)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rjk57"]
 shader = ExtResource("2_r87n5")
@@ -19,6 +21,7 @@ scale = Vector2(45.8417, 14.4777)
 priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.13414, 0)
 scale = Vector2(0.0625, 1)
 shape = SubResource("RectangleShape2D_q11my")
 
@@ -32,3 +35,8 @@ anchor_bottom = -0.00308642
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(145, -6.00001)
+scale = Vector2(5.96094, 4.80469)
+texture = ExtResource("3_rjk57")
