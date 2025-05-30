@@ -58,3 +58,4 @@ visible = false
 [node name="UiButtonLevel1" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
 position = Vector2(141, 68)
 label_text = "1"
+click_level = "levels/World1"
