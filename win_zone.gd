@@ -1,16 +1,30 @@
 extends Node2D
 
-@onready var collision_shape = $Area2D
+@onready var area = $Area2D
+@export var target_node_path: NodePath
+var target_node: Node2D
 
 func _ready():
-	collision_shape.body_entered.connect(Callable(self, "_on_body_entered"))
-	collision_shape.body_exited.connect(Callable(self, "_on_body_exited"))
+	target_node = get_node_or_null(target_node_path)
 
-func _on_body_entered(body: Node) -> void:
-	print(body.namea)
-	if body.name == "player":  # or check using groups: if body.is_in_group("player"):
-		print("Player entered area")
+func _process(_delta):
+	if target_node and is_inside_area(target_node.global_position):
+		print("Detected inside area:", target_node.name)
 
-func _on_body_exited(body: Node) -> void:
-	if body.name == "player":
-		print("Player exited area")
+func is_inside_area(world_pos: Vector2) -> bool:
+	var space_state = get_world_2d().direct_space_state
+	
+	# Create the query parameters object
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = world_pos
+	query.collide_with_bodies = false   # Only check Areas (change as needed)
+	query.collide_with_areas = true
+	query.collision_mask = area.collision_layer
+	
+	# Perform the intersection query
+	var results = space_state.intersect_point(query)
+	
+	for result in results:
+		if result.collider == area:
+			return true
+	return false
