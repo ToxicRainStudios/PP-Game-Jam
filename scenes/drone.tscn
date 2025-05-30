@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://k05382npxw4f"]
 
-[ext_resource type="Script" uid="uid://cuioivv46dvel" path="res://PossessableTarget2D.gd" id="1_knnud"]
+[ext_resource type="Script" uid="uid://dj0dyue0wssvv" path="res://scripts/drone.gd" id="1_knnud"]
 [ext_resource type="Texture2D" uid="uid://d360bv0qgi8g4" path="res://assets/drone.png" id="2_1r4ts"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_knnud"]

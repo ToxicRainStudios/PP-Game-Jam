@@ -27,8 +27,8 @@ shape = SubResource("RectangleShape2D_q11my")
 [node name="ColorRect" type="ColorRect" parent="VaporEffect"]
 material = SubResource("ShaderMaterial_rjk57")
 anchors_preset = -1
-anchor_right = 0.965278
-anchor_bottom = 0.938272
+anchor_right = 0.00434028
+anchor_bottom = -0.00308642
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
