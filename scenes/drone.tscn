@@ -7,14 +7,20 @@
 radius = 22.0
 
 [node name="Drone" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_knnud")
 metadata/_custom_type_script = "uid://cuioivv46dvel"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(39, 44)
 scale = Vector2(0.0641447, 0.0707237)
 texture = ExtResource("2_1r4ts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(38, 46)
+position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_knnud")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 26)
+exclude_parent = false
+target_position = Vector2(0, 195)
+hit_from_inside = true

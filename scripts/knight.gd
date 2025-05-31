@@ -25,7 +25,6 @@ func _physics_process(delta):
 	apply_gravity(delta)
 
 	if not animation_finished:
-		print("waiting for anim to finish")
 		velocity.x = 0
 	elif is_possessed:
 		var input_dir = 0

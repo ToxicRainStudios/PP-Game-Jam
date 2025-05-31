@@ -190,4 +190,4 @@ position = Vector2(-174, 8)
 target_node_path = NodePath("../player")
 
 [node name="Drone" parent="." instance=ExtResource("11_2ekj8")]
-position = Vector2(101, -118)
+position = Vector2(942, -544)
