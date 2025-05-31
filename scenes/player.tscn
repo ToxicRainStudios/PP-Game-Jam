@@ -102,7 +102,6 @@ script = ExtResource("1_g2els")
 ball_scene = ExtResource("2_dqkch")
 throw_texture = ExtResource("2_g2els")
 powerdown_texture = ExtResource("4_qlg0r")
-has_jump = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_g2els")

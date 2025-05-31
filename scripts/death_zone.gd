@@ -4,6 +4,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	Engine.time_scale = 0.5
+	Constants.play_sound_effect("sounds/colorscrimsontears__power-down.wav")
 	timer.start()
 	body.get_node("CollisionShape2D").queue_free()
 
