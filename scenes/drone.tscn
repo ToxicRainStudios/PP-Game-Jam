@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://k05382npxw4f"]
+[gd_scene load_steps=6 format=3 uid="uid://k05382npxw4f"]
 
 [ext_resource type="Script" uid="uid://dj0dyue0wssvv" path="res://scripts/drone.gd" id="1_knnud"]
 [ext_resource type="Texture2D" uid="uid://d360bv0qgi8g4" path="res://assets/drone.png" id="2_1r4ts"]
+[ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="3_1r4ts"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_knnud"]
 radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umx5g"]
+radius = 23.0
 
 [node name="Drone" type="CharacterBody2D"]
 motion_mode = 1
@@ -16,7 +20,6 @@ scale = Vector2(0.0641447, 0.0707237)
 texture = ExtResource("2_1r4ts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_knnud")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -24,3 +27,8 @@ position = Vector2(0, 26)
 exclude_parent = false
 target_position = Vector2(0, 195)
 hit_from_inside = true
+
+[node name="Death Zone" parent="." instance=ExtResource("3_1r4ts")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Zone"]
+shape = SubResource("CircleShape2D_umx5g")
