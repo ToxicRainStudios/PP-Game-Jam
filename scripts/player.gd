@@ -23,11 +23,16 @@ func _physics_process(delta):
 	if !Constants.possessed_something:
 		update_movement(delta)  # inherited from base class
 		
-		if direction > 0:
+		# Get the global mouse position x
+		var mouse_x = get_global_mouse_position().x
+		
+		# Flip sprite based on mouse position relative to the player
+		if mouse_x > global_position.x:
 			sprite.flip_h = false
-		elif direction < 0:
+		else:
 			sprite.flip_h = true
-	
+		
+		# Your existing input handling
 		if Input.is_action_just_pressed("possess"):
 			sprite.texture = throw_texture
 			animator.play("throw")
@@ -48,15 +53,15 @@ func _physics_process(delta):
 		velocity.x = direction * current_speed
 	else:
 		if Input.is_action_just_released("unpossess"):
-				print("waking back up")
-				Constants.restore_camera_to_player()
-				Constants.possessed_target._end_possession()
-				animator.stop()
-				sprite.texture = powerdown_texture
-				Constants.play_sound_effect("res://sounds/luminousfridge__os-start.ogg")
-				animator.play("powerup")
-				Constants.possessed_something = false
-			
+			print("waking back up")
+			Constants.restore_camera_to_player()
+			Constants.possessed_target._end_possession()
+			animator.stop()
+			sprite.texture = powerdown_texture
+			Constants.play_sound_effect("res://sounds/luminousfridge__os-start.ogg")
+			animator.play("powerup")
+			Constants.possessed_something = false
+
 
 func _throw_ball():
 	if ball_scene:

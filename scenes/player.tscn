@@ -97,7 +97,7 @@ size = Vector2(18.9643, 45.0244)
 [node name="player" type="CharacterBody2D"]
 position = Vector2(12, 1)
 scale = Vector2(2, 2)
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_g2els")
 ball_scene = ExtResource("2_dqkch")
 throw_texture = ExtResource("2_g2els")

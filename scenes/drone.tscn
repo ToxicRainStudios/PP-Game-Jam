@@ -26,6 +26,7 @@ shape = SubResource("CircleShape2D_knnud")
 position = Vector2(0, 26)
 exclude_parent = false
 target_position = Vector2(0, 195)
+collision_mask = 2
 hit_from_inside = true
 
 [node name="Death Zone" parent="." instance=ExtResource("3_1r4ts")]
