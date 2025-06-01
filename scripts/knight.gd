@@ -25,6 +25,7 @@ func _physics_process(delta):
 	if not animation_finished:
 		velocity.x = 0
 	elif is_possessed:
+		$"Swing Area/Death Zone".is_live = false
 		var input_dir = 0
 		if Input.is_action_pressed("move_left"):
 			input_dir -= 1
@@ -41,6 +42,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("possess"):
 			_swing()
 	else:
+		$"Swing Area/Death Zone".is_live = true
 		if ray_cast_right.is_colliding():
 			if ray_cast_right.get_collider() == player:
 				swing_area.position.x = 30
