@@ -169,7 +169,6 @@ jump_force = 700.0
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
 texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_e3hyu")
