@@ -3,35 +3,35 @@ extends Node2D
 @export var label_text: String = "Hello, world!"
 @export var click_level: String = "World"
 
-var is_hovered = false
-var click_area = null
-
 func _ready():
-	# Setup the Label
-	var label = get_node("Label")
+	var click_area = $ButtonArea
+	var label = $Label
+	
 	if label and label is Label:
 		label.text = label_text
-	else:
-		print("Label node not found or wrong type.")
-
-	# Setup the ClickArea ColorRect
-	click_area = get_node("ButtonArea")
+	
 	if click_area and click_area is ColorRect:
+		if click_area.material:
+			click_area.material = click_area.material.duplicate()
+		
+		# Connect signals with Godot 4 syntax (using `@` or explicit function reference)
 		click_area.mouse_entered.connect(_on_mouse_entered)
 		click_area.mouse_exited.connect(_on_mouse_exited)
 		click_area.gui_input.connect(_on_gui_input)
+	else:
+		print("click_area missing or wrong type")
 
 func _on_mouse_entered():
-	is_hovered = true
-	click_area.material.set_shader_parameter("hovered", true)
+	if $ButtonArea and $ButtonArea.material:
+		$ButtonArea.material.set_shader_parameter("hovered", true)
 	print("Hovering!")
 
 func _on_mouse_exited():
-	is_hovered = false
-	click_area.material.set_shader_parameter("hovered", false)
+	if $ButtonArea and $ButtonArea.material:
+		$ButtonArea.material.set_shader_parameter("hovered", false)
 	print("Not hovering.")
 
-func _on_gui_input(event):
+func _on_gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		_on_click()
 
