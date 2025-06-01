@@ -40,6 +40,7 @@ func _physics_process(delta):
 				if body is CharacterBody2D:
 					grabbed_body = body
 					grabbed_body_original_rotation = body.global_rotation  
+					$"Death Zone".is_live = false
 					_create_proxy_for_character(body)
 					
 					body.set_physics_process(false)
@@ -59,6 +60,7 @@ func _physics_process(delta):
 					get_tree().current_scene.add_child(grab_joint)
 		elif Input.is_action_just_released("possess"):
 			_release_grabbed_body()
+			$"Death Zone".is_live = false
 
 		velocity.x = input_dir_x * speed
 		velocity.y = input_dir_y * FLY_SPEED
