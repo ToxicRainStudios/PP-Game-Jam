@@ -54,7 +54,7 @@ offset_bottom = 241.0
 
 [node name="UiButtonLevel3" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
 position = Vector2(494, 67)
-label_text = "2"
+label_text = "3"
 click_level = "levels/World3"
 
 [node name="UiButtonLevel2" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
