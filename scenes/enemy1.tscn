@@ -46,6 +46,7 @@ size = Vector2(52, 96)
 
 [node name="knight" type="CharacterBody2D"]
 script = ExtResource("1_n665k")
+has_jump = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, 3.8147e-07)

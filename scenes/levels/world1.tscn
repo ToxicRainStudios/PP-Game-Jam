@@ -104,7 +104,7 @@ shader_parameter/wave_freq = Vector2(10, 6)
 material = SubResource("ShaderMaterial_7r4gi")
 
 [node name="player" parent="." instance=ExtResource("2_2ekj8")]
-position = Vector2(720, -1094)
+position = Vector2(3793, 76)
 
 [node name="ControlHints" parent="player" instance=ExtResource("3_4pgdw")]
 position = Vector2(-360, 547)
@@ -160,6 +160,7 @@ autoplay = "RESET"
 
 [node name="VapeKnight1" parent="terrain" instance=ExtResource("8_qrxl2")]
 position = Vector2(4169, 143)
+jump_force = 700.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -167,6 +168,7 @@ position = Vector2(4169, 143)
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
 texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_e3hyu")

@@ -32,6 +32,8 @@ func _physics_process(delta):
 			input_dir -= 1
 		if Input.is_action_pressed("move_right"):
 			input_dir += 1
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = -jump_force
 
 		velocity.x = input_dir * SPEED
 		sprite.flip_h = input_dir < 0
