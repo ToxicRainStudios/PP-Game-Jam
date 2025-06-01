@@ -66,3 +66,8 @@ click_level = "levels/World2"
 position = Vector2(141, 68)
 label_text = "1"
 click_level = "levels/World1"
+
+[node name="UiButtonLevel4" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
+position = Vector2(671, 68)
+label_text = "4"
+click_level = "levels/World4"
