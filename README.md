@@ -1,8 +1,8 @@
 ## PP Game Jam Project: Forced Circuit
 
 ### Contributors:
-* HalfaNerd - 2D Art
-* Notdeadpool456 - 2D Art/Animation
+* HalfaNerd - 2D Art/Music
+* Notdeadpool456 - 2D Art/Animation/Map Design
 * Strubium/Smeagle - Programming
 * Gabef - Programming
 
