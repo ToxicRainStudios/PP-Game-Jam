@@ -1,7 +1,7 @@
 extends BaseCharacter2D
 
 @export var ball_scene: PackedScene
-@export var throw_strength: float = 800
+@export var throw_strength: float = 1000
 
 @export var throw_texture: Texture2D
 @export var powerdown_texture: Texture2D
