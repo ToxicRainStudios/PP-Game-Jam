@@ -68,6 +68,12 @@ func _physics_process(delta):
 		if grabbed_body and grabbed_body is CharacterBody2D and proxy:
 			grabbed_body.global_position = proxy.global_position
 			grabbed_body.global_rotation = proxy.global_rotation
+			
+		if not is_on_floor():
+			velocity.y += gravity * delta
+		else:
+			# on floor, no gravity effect
+			velocity.y = 0 if velocity.y > 0 else velocity.y
 
 	else:
 		if raycast.is_colliding():

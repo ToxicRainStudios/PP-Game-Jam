@@ -13,6 +13,7 @@ radius = 23.0
 [node name="Drone" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_knnud")
+gravity = 400.0
 metadata/_custom_type_script = "uid://cuioivv46dvel"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
