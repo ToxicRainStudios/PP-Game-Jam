@@ -1,6 +1,5 @@
 extends PossessableTarget2D
 
-const SPEED = 60
 const FLY_SPEED = 80
 const CIRCLE_RADIUS = 50
 const CIRCLE_SPEED = 1.5  # radians per second
@@ -61,7 +60,7 @@ func _physics_process(delta):
 		elif Input.is_action_just_released("possess"):
 			_release_grabbed_body()
 
-		velocity.x = input_dir_x * SPEED
+		velocity.x = input_dir_x * speed
 		velocity.y = input_dir_y * FLY_SPEED
 		player_detected = false
 		

@@ -3,6 +3,7 @@ extends Area2D
 @onready var timer: Timer = $Timer
 
 func _on_body_entered(body):
+	Constants.possessed_something = false
 	Engine.time_scale = 0.5
 	Constants.play_sound_effect("sounds/colorscrimsontears__power-down.wav")
 	timer.start()
