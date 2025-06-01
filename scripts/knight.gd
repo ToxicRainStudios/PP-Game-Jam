@@ -8,14 +8,19 @@ var animation_finished = true
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var Animator: AnimationPlayer = $Sprite2D/AnimationPlayer
 @onready var swing_area = $"Swing Area"
-	
+@onready var raycast = $RayCast2D  # Reusing one of the raycasts for dragging
+@onready var drag_controller = DragHandler.new()
+
+func _ready():
+	raycast.enabled = true
+	add_child(drag_controller)
+
 func _swing():
 	velocity.x = 0
 	animation_finished = false
 	print("starting swing")
 	Animator.play("swing")
 	swing_area.apply_scale(Vector2(2,1))
-	
 
 func _physics_process(delta):
 	var player = $"../../player"
@@ -36,11 +41,16 @@ func _physics_process(delta):
 
 		velocity.x = input_dir * speed
 		sprite.flip_h = input_dir < 0
-		swing_area.position.x = 30 if not sprite.flip_h else -30  # flip swing area too
+		swing_area.position.x = 30 if not sprite.flip_h else -30
 
-		# Handle swing input
+		# Drag input
 		if Input.is_action_just_pressed("possess"):
 			_swing()
+			drag_controller.grab(self, raycast, get_tree().current_scene)
+		elif Input.is_action_just_released("possess"):
+			drag_controller.release()
+
+		drag_controller.update_grabbed_transform()
 	else:
 		$"Swing Area/Death Zone".is_live = true
 		if ray_cast_right.is_colliding():
@@ -65,7 +75,6 @@ func _physics_process(delta):
 		velocity.x = direct * speed
 
 	move_and_slide()
-
 
 func _on_animation_player_animation_finished(anim_name: StringName):
 	if anim_name == "swing":
