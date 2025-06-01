@@ -1,12 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://c7mwp0x7y2v6l"]
+[gd_scene load_steps=19 format=3 uid="uid://c7mwp0x7y2v6l"]
 
-[ext_resource type="Shader" uid="uid://dvgl0a0duep3r" path="res://shader/all.gdshader" id="1_y4uwf"]
+[ext_resource type="Shader" path="res://shader/all.gdshader" id="1_y4uwf"]
 [ext_resource type="PackedScene" uid="uid://dksy06q8yt0et" path="res://scenes/player.tscn" id="2_twboh"]
 [ext_resource type="PackedScene" uid="uid://4fn2nqs14tjm" path="res://scenes/control_hints.tscn" id="3_if5nb"]
 [ext_resource type="PackedScene" uid="uid://bqlt8o01v1lwo" path="res://scenes/pickup.tscn" id="4_r1gpo"]
 [ext_resource type="Shader" uid="uid://oxpyj1jykvgb" path="res://shader/world.gdshader" id="5_6bajp"]
 [ext_resource type="PackedScene" uid="uid://dw3ge61dwkaol" path="res://scenes/Death Zone.tscn" id="6_wflo8"]
-[ext_resource type="PackedScene" uid="uid://cqtmbkm0r3hqm" path="res://scenes/platform.tscn" id="7_ii1vl"]
 [ext_resource type="PackedScene" uid="uid://b7hux2av5we5a" path="res://scenes/enemy1.tscn" id="8_155r5"]
 [ext_resource type="Shader" uid="uid://mj1lmb5sb41k" path="res://shader/background.gdshader" id="9_gd2ep"]
 [ext_resource type="PackedScene" uid="uid://ccp78og5lgqp4" path="res://scenes/win_zone.tscn" id="10_8ch3a"]
@@ -55,45 +54,6 @@ sources/1 = SubResource("TileSetAtlasSource_4mrxx")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qfnet"]
 
-[sub_resource type="Animation" id="Animation_7r4gi"]
-length = 4.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2297, 258), Vector2(3351, 258)]
-}
-
-[sub_resource type="Animation" id="Animation_4mrxx"]
-resource_name = "move"
-length = 4.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2296, 258), Vector2(3348, 258)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w7kh3"]
-_data = {
-&"RESET": SubResource("Animation_7r4gi"),
-&"move": SubResource("Animation_4mrxx")
-}
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e3hyu"]
 shader = ExtResource("9_gd2ep")
 shader_parameter/time_speed = 0.4
@@ -105,7 +65,7 @@ shader_parameter/wave_freq = Vector2(10, 6)
 material = SubResource("ShaderMaterial_7r4gi")
 
 [node name="player" parent="." instance=ExtResource("2_twboh")]
-position = Vector2(720, -1094)
+position = Vector2(3950, 195)
 
 [node name="ControlHints" parent="player" instance=ExtResource("3_if5nb")]
 position = Vector2(-360, 547)
@@ -136,7 +96,7 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_qfnet")
 format = 2
 layer_0/name = "Foreground"
-layer_0/tile_data = PackedInt32Array(196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 65539, 65536, 0, 65538, 65536, 0, 65537, 65536, 0, 65536, 65536, 0, 131071, 65536, 0, 131070, 65536, 0, 131069, 65536, 0, 131068, 65536, 0, 4, 131072, 0, -65531, 131072, 0, -131066, 131072, 0, -196601, 131072, 0, 65540, 0, 0, 131076, 0, 0, 5, 0, 0, 65541, 0, 0, -65530, 0, 0, 6, 0, 0, -131065, 0, 0, -65529, 0, 0, -131064, 0, 0, -196600, 0, 0, -262135, 196608, 0, -196598, 196608, 0, -131061, 196608, 0, -65524, 196608, 0, 13, 196608, 0, 65550, 196608, 0, 131087, 65536, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 65549, 0, 0, 65548, 0, 0, 65547, 0, 0, 65546, 0, 0, 65545, 0, 0, 65544, 0, 0, 65543, 0, 0, 65542, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, -65525, 0, 0, -65526, 0, 0, -65527, 0, 0, -65528, 0, 0, -131063, 0, 0, -131062, 0, 0, -196599, 0, 0, 131099, 65536, 0, 65564, 131072, 0, 131100, 0, 0, 65565, 65536, 0, 131101, 0, 0, 131102, 0, 0, 131103, 0, 0, 131104, 0, 0, 131105, 0, 0, 131106, 0, 0, 65571, 0, 0, 131107, 0, 0, 65572, 196608, 0, 131108, 0, 0, 131109, 196608, 0, 196623, 0, 0, 262159, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 262171, 0, 0, 196635, 0, 0, -262136, 131072, 0)
+layer_0/tile_data = PackedInt32Array(196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 65539, 65536, 0, 65538, 65536, 0, 65537, 65536, 0, 65536, 65536, 0, 131071, 65536, 0, 131070, 65536, 0, 131069, 65536, 0, 131068, 65536, 0, 65540, 65536, 0, 131076, 0, 0, 65541, 65536, 0, 65550, 65536, 0, 131087, 65536, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 65549, 65536, 0, 65548, 65536, 0, 65547, 65536, 0, 65546, 65536, 0, 65545, 65536, 0, 65544, 65536, 0, 65543, 65536, 0, 65542, 65536, 0, 131099, 65536, 0, 65564, 131072, 0, 131100, 0, 0, 65565, 65536, 0, 131101, 0, 0, 131102, 0, 0, 131103, 0, 0, 131104, 0, 0, 131105, 0, 0, 131106, 0, 0, 65571, 0, 0, 131107, 0, 0, 65572, 196608, 0, 131108, 0, 0, 131109, 196608, 0, 196623, 0, 0, 262159, 0, 0, 327695, 0, 0, 327696, 0, 0, 327698, 0, 0, 327699, 0, 0, 327701, 0, 0, 327702, 0, 0, 327704, 0, 0, 327705, 0, 0, 327707, 0, 0, 262171, 0, 0, 196635, 0, 0, 262169, 0, 0, 196633, 0, 0, 131097, 65536, 0, 131096, 65536, 0, 196632, 0, 0, 262168, 0, 0, 262166, 0, 0, 196630, 0, 0, 196629, 0, 0, 262165, 0, 0, 131094, 65536, 0, 131093, 65536, 0, 262163, 0, 0, 262162, 0, 0, 196626, 0, 0, 196627, 0, 0, 131091, 65536, 0, 131090, 65536, 0, 262160, 0, 0, 196624, 0, 0, 131088, 65536, 0)
 layer_1/name = "Background"
 layer_1/enabled = false
 layer_1/z_index = -1
@@ -149,15 +109,6 @@ position = Vector2(15, 381)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="terrain/Death Zone"]
 position = Vector2(-7, 72)
 shape = SubResource("WorldBoundaryShape2D_qfnet")
-
-[node name="Platform2" parent="terrain" instance=ExtResource("7_ii1vl")]
-position = Vector2(2297, 258)
-
-[node name="move" type="AnimationPlayer" parent="terrain/Platform2"]
-libraries = {
-&"": SubResource("AnimationLibrary_w7kh3")
-}
-autoplay = "RESET"
 
 [node name="VapeKnight1" parent="terrain" instance=ExtResource("8_155r5")]
 position = Vector2(4169, 143)

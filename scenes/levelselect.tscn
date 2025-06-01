@@ -52,6 +52,16 @@ offset_top = 84.0
 offset_right = 373.0
 offset_bottom = 241.0
 
+[node name="UiButtonLevel3" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
+position = Vector2(494, 67)
+label_text = "2"
+click_level = "levels/World3"
+
+[node name="UiButtonLevel2" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
+position = Vector2(318, 68)
+label_text = "2"
+click_level = "levels/World2"
+
 [node name="Node2D" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
 visible = false
 

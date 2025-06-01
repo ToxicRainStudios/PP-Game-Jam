@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://b1lf3r0gb61lt"]
 
-[ext_resource type="Shader" uid="uid://dvgl0a0duep3r" path="res://shader/all.gdshader" id="1_tywc6"]
+[ext_resource type="Shader" path="res://shader/all.gdshader" id="1_tywc6"]
 [ext_resource type="PackedScene" uid="uid://dksy06q8yt0et" path="res://scenes/player.tscn" id="2_2ekj8"]
 [ext_resource type="PackedScene" uid="uid://4fn2nqs14tjm" path="res://scenes/control_hints.tscn" id="3_4pgdw"]
 [ext_resource type="PackedScene" uid="uid://bqlt8o01v1lwo" path="res://scenes/pickup.tscn" id="4_afs5x"]
@@ -160,8 +160,8 @@ autoplay = "RESET"
 
 [node name="VapeKnight1" parent="terrain" instance=ExtResource("8_qrxl2")]
 position = Vector2(4169, 143)
-speed = 100.0
-jump_force = 700.0
+speed = 175.0
+jump_force = 600.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
