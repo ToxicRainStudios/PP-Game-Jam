@@ -160,6 +160,7 @@ autoplay = "RESET"
 
 [node name="VapeKnight1" parent="terrain" instance=ExtResource("8_qrxl2")]
 position = Vector2(4169, 143)
+speed = 100.0
 jump_force = 700.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
