@@ -54,7 +54,7 @@ offset_bottom = 241.0
 
 [node name="UiButtonLevel3" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
 position = Vector2(494, 67)
-label_text = "2"
+label_text = "3"
 click_level = "levels/World3"
 
 [node name="UiButtonLevel2" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
@@ -66,3 +66,8 @@ click_level = "levels/World2"
 position = Vector2(141, 68)
 label_text = "1"
 click_level = "levels/World1"
+
+[node name="UiButtonLevel4" parent="VBoxContainer" instance=ExtResource("2_vttqt")]
+position = Vector2(671, 68)
+label_text = "4"
+click_level = "levels/World4"
