@@ -21,6 +21,12 @@ config/icon="uid://tt7cbv68o0sl"
 
 Constants="*res://constants.gd"
 
+[display]
+
+window/size/mode=4
+window/size/always_on_top=true
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="PP-Game-Jam"
