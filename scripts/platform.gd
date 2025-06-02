@@ -34,13 +34,14 @@ func _update_platform():
 	# Update ColorRect
 	if color_rect:
 		color_rect.size = size
+		color_rect.position = Vector2.ZERO  # Make sure it aligns correctly
 		color_rect.color = platform_color
 
 	# Update or create RectangleShape2D
 	if collision_shape:
-		var shape = collision_shape.shape
-		if shape == null or not shape is RectangleShape2D:
-			shape = RectangleShape2D.new()
-			collision_shape.shape = shape
+		if collision_shape.shape == null or not collision_shape.shape is RectangleShape2D:
+			collision_shape.shape = RectangleShape2D.new()
 
-		shape.extents = size / 2.0
+		var shape := collision_shape.shape as RectangleShape2D
+		shape.extents = size * 0.5
+		collision_shape.position = size * 0.5  # Align the shape with the visual
