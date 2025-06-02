@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1kx3w8o1etvp"]
+[gd_scene load_steps=5 format=3 uid="uid://b1kx3w8o1etvp"]
 
 [ext_resource type="Script" uid="uid://dfhckiq6tggqf" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://b2gq4ymy4deqx" path="res://assets/main_menu.png" id="2_wu84c"]
+[ext_resource type="AudioStream" uid="uid://ci3emi8yo0gjb" path="res://sounds/music_main_menu.mp3" id="3_bqqt6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
 font_color = Color(0, 0, 0, 1)
@@ -42,11 +43,13 @@ offset_bottom = 696.0
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Start"
-script = ExtResource("1_l6cm7")
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bqqt6")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_quit_button_pressed"]
